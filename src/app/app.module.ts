@@ -12,11 +12,15 @@ registerLocaleData(localeFr);
 
 import { AppComponent } from './app.component';
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { PipeseguroPipe } from './pipes/pipeseguro.pipe';
+import { OcultarcadenaPipe } from './pipes/ocultarcadena.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    PipeseguroPipe,
+    OcultarcadenaPipe
   ],
   imports: [
     BrowserModule

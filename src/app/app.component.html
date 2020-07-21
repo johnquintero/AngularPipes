@@ -108,14 +108,21 @@
         </tr>
         <tr>
           <td>{{ fecha }}</td>
-          <td>Date:'MMMM-dd-yyyy':'':'{{ idioma }}'</td>
-          <br />
-          <button (click) = "idioma='es'" class="btn btn-primary mr-1">Español</button>
-          <button (click) = "idioma='en'" class="btn btn-info mr-1">Ingles</button>
-          <button (click) = "idioma='fr'" class="btn btn-secondary mr-1">Frances</button>
+          <td>Date:'MMMM-dd-yyyy':'':'{{ idioma }}'
+            <br />
+            <button (click) = "idioma='es'" class="btn btn-primary mr-1">Español</button>
+            <button (click) = "idioma='en'" class="btn btn-info mr-1">Ingles</button>
+            <button (click) = "idioma='fr'" class="btn btn-secondary mr-1">Frances</button>
+          </td>
           <td>{{ fecha | date:'MMMM-dd-yyyy':'': idioma  }}</td>
         </tr>
-       
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>Ocultar
+              <button (click) = "activo = !activo" class="btn btn-info mr-1">Activar/Desactivar</button>
+          </td>
+          <td>{{ nombre | ocultarcadena:activo }}</td>
+        </tr>
       </tbody>
     </table>
     <hr>
@@ -147,7 +154,12 @@
       <div class="row">
         <div class="col">
           <iframe width="560" 
-                  height="315" src="https://www.youtube.com/embed/Y-HIJFxM264" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  height="315" 
+                  [src]="videoUrl | pipeseguro" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>

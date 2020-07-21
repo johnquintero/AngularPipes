@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { animationFrameScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   porcentaje  : number = 0.234;
   salario     : number = 1234.5;
   idioma      : string = 'es';
+  activo      : boolean = false;
   valorPromesa = new Promise<string>((resolve)=>{
       setTimeout(() => {
         resolve('LLego la data');
@@ -30,4 +32,6 @@ export class AppComponent {
       segundo : 'x-force'
     }
   }
+
+  videoUrl : string = 'https://www.youtube.com/embed/Y-HIJFxM264';
 }
